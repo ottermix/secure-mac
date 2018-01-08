@@ -1,3 +1,6 @@
+# Some commands will require sudo access
+sudo -v
+
 ###############################################################################
 # General                                                                     #
 ###############################################################################
@@ -88,3 +91,12 @@ defaults write com.apple.commerce AutoUpdate -bool true
 # Allow the App Store to reboot machine on macOS updates
 defaults write com.apple.commerce AutoUpdateRestartRequired -bool true
 
+###############################################################################
+# Encryption                                                                  #
+###############################################################################
+
+# This should turn on FileVault
+fdesetup enable
+
+# Removes the auto login
+defaults delete /Library/Preferences/com.apple.loginwindow autoLoginUser 2&>1
